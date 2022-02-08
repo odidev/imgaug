@@ -6,7 +6,6 @@ language:
   - python
 arch:
   - arm64
-  - amd64
 python:
   - "3.8"
 env:
@@ -20,9 +19,11 @@ cache:
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -qq -y python-virtualenv
+  - sudo apt-get update && apt-get install -y python3-opencv
   # otherwise imagecodecs fails to build on py3.6,
   # see https://github.com/scikit-image/scikit-image/issues/4673
   - pip install --upgrade pip
+  - pip install opencv-python
 
 install:
 # TODO why was this deactivated?
