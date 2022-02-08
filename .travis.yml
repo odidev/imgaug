@@ -19,7 +19,7 @@ cache:
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -qq -y python-virtualenv
-  - sudo apt-get update && apt-get install -y python3-opencv
+  - sudo apt-get update && sudo apt-get install -y python3-opencv
   # otherwise imagecodecs fails to build on py3.6,
   # see https://github.com/scikit-image/scikit-image/issues/4673
   - pip install --upgrade pip
