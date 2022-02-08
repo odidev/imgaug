@@ -4,8 +4,11 @@ dist: trusty
 
 language:
   - python
-  - cpp
-
+arch:
+  - arm64
+  - amd64
+python:
+  - "3.8"
 env:
   global:
     - CODACY_PROJECT_TOKEN=1370ce38e99e40af842d47a8dd721444
@@ -13,15 +16,6 @@ env:
 cache:
   directories:
     - $HOME/.cache/pip
-
-python:
-  - "2.7"
-  # - "3.2"  # downloads np 1.17 on travis (?!), which doesn't support 3.2
-  # - "3.3"  # downloads np 1.17 on travis (?!), which doesn't support 3.3
-  - "3.4"
-  - "3.5"
-  - "3.6"
-  # - "3.7"  # python version cannot be installed on travis
 
 before_install:
   - sudo apt-get update -qq
